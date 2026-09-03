@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-dark transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-white text-brand font-bold px-6 py-3 rounded-lg border-2 border-brand hover:bg-brand-50 transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all bg-white;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-dark mb-3;
+  }
+  .section-sub {
+    @apply text-gray-500 text-lg mb-10;
+  }
+}

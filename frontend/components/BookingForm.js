@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useJsApiLoader, Autocomplete } from '@react-google-maps/api';
+import MapPickerModal from './MapPickerModal';
 
 const VEHICLES = [
   { id: 'Sedan', label: 'Sedan', desc: 'Swift Dzire, Etios', icon: '🚗', rate: 14, maxPax: 4 },
@@ -14,6 +16,7 @@ const TIMES = Array.from({ length: 24 }, (_, i) => {
 });
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const libraries = ['places'];
 
 export default function BookingForm() {
   const [tab, setTab] = useState('one-way');
@@ -26,6 +29,36 @@ export default function BookingForm() {
   const [fareInfo, setFareInfo] = useState(null);
   const [result, setResult] = useState(null);
   const [errors, setErrors] = useState({});
+  const [mapModal, setMapModal] = useState({ isOpen: false, field: null });
+  const [locLoading, setLocLoading] = useState(false);
+  const pickupRef = useRef(null);
+  const dropRef = useRef(null);
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY,
+    libraries,
+  });
+
+  const handleCurrentLocation = (field) => {
+    if (!navigator.geolocation) return alert("Geolocation not supported");
+    setLocLoading(field);
+    navigator.geolocation.getCurrentPosition(async (pos) => {
+      try {
+        const geocoder = new window.google.maps.Geocoder();
+        const res = await geocoder.geocode({ location: { lat: pos.coords.latitude, lng: pos.coords.longitude } });
+        if (res.results && res.results[0]) {
+          f(field, res.results[0].formatted_address);
+        }
+      } catch (e) {
+        alert("Error fetching address");
+      }
+      setLocLoading(false);
+    }, () => {
+      alert("Please allow location access");
+      setLocLoading(false);
+    });
+  };
 
   // Auto-calculate fare when pickup/drop/vehicle/tripType changes
   useEffect(() => {
@@ -138,14 +171,82 @@ export default function BookingForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">📍 Pickup Location</label>
-            <input value={form.pickup} onChange={e => f('pickup', e.target.value)} placeholder="City / Area / Landmark"
-              className={`input-field ${errors.pickup ? 'border-red-400 ring-1 ring-red-400' : ''}`} />
+            <div className="relative flex items-center">
+              {isLoaded ? (
+                <Autocomplete
+                  onLoad={auto => { pickupRef.current = auto; }}
+                  onPlaceChanged={() => {
+                    if (pickupRef.current !== null) {
+                      const place = pickupRef.current.getPlace();
+                      f('pickup', place.formatted_address || place.name);
+                    }
+                  }}
+                  options={{ types: ["geocode", "establishment"], componentRestrictions: { country: "in" } }}
+                  className="w-full"
+                >
+                  <input
+                    value={form.pickup}
+                    onChange={e => f('pickup', e.target.value)}
+                    placeholder="City / Area / Landmark"
+                    className={`input-field pr-20 w-full ${errors.pickup ? 'border-red-400 ring-1 ring-red-400' : ''}`}
+                  />
+                </Autocomplete>
+              ) : (
+                <input
+                  value={form.pickup}
+                  onChange={e => f('pickup', e.target.value)}
+                  placeholder="Loading Places..."
+                  className={`input-field pr-20 w-full ${errors.pickup ? 'border-red-400 ring-1 ring-red-400' : ''}`}
+                  disabled
+                />
+              )}
+              <div className="absolute right-2 flex items-center gap-1">
+                <button type="button" title="Current Location" onClick={() => handleCurrentLocation('pickup')} className="p-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm flex justify-center items-center h-8 w-8">
+                  {locLoading === 'pickup' ? <div className="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div> : '📍'}
+                </button>
+                <button type="button" title="Set on Map" onClick={() => setMapModal({ isOpen: true, field: 'pickup' })} className="p-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm flex justify-center items-center h-8 w-8">🗺️</button>
+              </div>
+            </div>
             {errors.pickup && <p className="text-red-500 text-xs mt-1">{errors.pickup}</p>}
           </div>
           <div>
             <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">📍 Drop Location</label>
-            <input value={form.drop} onChange={e => f('drop', e.target.value)} placeholder="City / Area / Landmark"
-              className={`input-field ${errors.drop ? 'border-red-400 ring-1 ring-red-400' : ''}`} />
+            <div className="relative flex items-center">
+              {isLoaded ? (
+                <Autocomplete
+                  onLoad={auto => { dropRef.current = auto; }}
+                  onPlaceChanged={() => {
+                    if (dropRef.current !== null) {
+                      const place = dropRef.current.getPlace();
+                      f('drop', place.formatted_address || place.name);
+                    }
+                  }}
+                  options={{ types: ["geocode", "establishment"], componentRestrictions: { country: "in" } }}
+                  className="w-full"
+                >
+                  <input
+                    value={form.drop}
+                    onChange={e => f('drop', e.target.value)}
+                    placeholder="City / Area / Landmark"
+                    className={`input-field pr-20 w-full ${errors.drop ? 'border-red-400 ring-1 ring-red-400' : ''}`}
+                  />
+                </Autocomplete>
+              ) : (
+                <input
+                  value={form.drop}
+                  onChange={e => f('drop', e.target.value)}
+                  placeholder="Loading Places..."
+                  className={`input-field pr-20 w-full ${errors.drop ? 'border-red-400 ring-1 ring-red-400' : ''}`}
+                  disabled
+                />
+              )}
+              <div className="absolute right-2 flex items-center gap-1">
+                <button type="button" title="Current Location" onClick={() => handleCurrentLocation('drop')} className="p-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm flex justify-center items-center h-8 w-8">
+                  {locLoading === 'drop' ? <div className="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div> : '📍'}
+                </button>
+                <button type="button" title="Set on Map" onClick={() => setMapModal({ isOpen: true, field: 'drop' })} className="p-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm flex justify-center items-center h-8 w-8">🗺️</button>
+              </div>
+            </div>
             {errors.drop && <p className="text-red-500 text-xs mt-1">{errors.drop}</p>}
           </div>
         </div>
@@ -247,6 +348,16 @@ export default function BookingForm() {
 
         <p className="text-center text-xs text-gray-400">✅ No hidden charges · 24/7 Support · Free cancellation</p>
       </div>
+
+      <MapPickerModal 
+        isOpen={mapModal.isOpen} 
+        isLoaded={isLoaded}
+        onClose={() => setMapModal({ isOpen: false, field: null })}
+        onConfirm={(address) => {
+          f(mapModal.field, address);
+          setMapModal({ isOpen: false, field: null });
+        }}
+      />
     </div>
   );
 }

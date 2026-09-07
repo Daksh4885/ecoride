@@ -1,15 +1,16 @@
-const https = require('https');
+const axios = require('axios');
 
 /**
- * Send WhatsApp message to operator via CallMeBot API
+ * Send WhatsApp message to operator via Official Meta Cloud API
  * @param {Object} booking - Booking details
  */
 async function sendWhatsAppNotification(booking) {
-  const phone = process.env.WHATSAPP_NUMBER;     // 917019700584
-  const apiKey = process.env.CALLMEBOT_APIKEY;   // your CallMeBot API key
+  const phone = process.env.WHATSAPP_NUMBER;             // Format: 917019700584 (no +)
+  const phoneId = process.env.WHATSAPP_PHONE_ID;         // Meta Phone Number ID
+  const accessToken = process.env.WHATSAPP_ACCESS_TOKEN; // Meta Permanent Access Token
 
-  if (!phone || !apiKey) {
-    console.warn('⚠️  WhatsApp credentials not set. Skipping notification.');
+  if (!phone || !phoneId || !accessToken) {
+    console.warn('⚠️  Meta WhatsApp credentials not set. Skipping notification.');
     return { success: false, reason: 'credentials_missing' };
   }
 
@@ -39,27 +40,36 @@ ${booking.tripType === 'round-trip' ? `📆 Days: ${booking.noOfDays}\n` : ''}�
 Call customer to confirm booking!
 `.trim();
 
-  const encodedMsg = encodeURIComponent(message);
-  const url = `https://api.callmebot.com/whatsapp.php?phone=${phone}&text=${encodedMsg}&apikey=${apiKey}`;
+  const url = `https://graph.facebook.com/v17.0/${phoneId}/messages`;
 
-  return new Promise((resolve) => {
-    https.get(url, (res) => {
-      let data = '';
-      res.on('data', chunk => { data += chunk; });
-      res.on('end', () => {
-        if (res.statusCode === 200) {
-          console.log('✅ WhatsApp notification sent successfully');
-          resolve({ success: true });
-        } else {
-          console.error('❌ WhatsApp notification failed:', res.statusCode, data);
-          resolve({ success: false, reason: data });
+  try {
+    const response = await axios.post(
+      url,
+      {
+        messaging_product: 'whatsapp',
+        to: phone,
+        type: 'text',
+        text: { body: message }
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
         }
-      });
-    }).on('error', (err) => {
-      console.error('❌ WhatsApp notification error:', err.message);
-      resolve({ success: false, reason: err.message });
-    });
-  });
+      }
+    );
+
+    if (response.status === 200 || response.status === 201) {
+      console.log('✅ WhatsApp notification sent successfully via Meta API');
+      return { success: true };
+    } else {
+      console.error('❌ WhatsApp notification failed:', response.status, response.data);
+      return { success: false, reason: response.data };
+    }
+  } catch (error) {
+    console.error('❌ WhatsApp notification error:', error.response ? error.response.data : error.message);
+    return { success: false, reason: error.message };
+  }
 }
 
 module.exports = { sendWhatsAppNotification };

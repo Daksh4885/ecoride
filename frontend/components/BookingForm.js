@@ -3,10 +3,10 @@ import { useJsApiLoader, Autocomplete } from '@react-google-maps/api';
 import MapPickerModal from './MapPickerModal';
 
 const VEHICLES = [
-  { id: 'Sedan', label: 'Sedan', desc: 'Swift Dzire, Etios', icon: '🚗', rate: 14, maxPax: 4 },
-  { id: 'SUV', label: 'SUV', desc: 'Innova, Ertiga', icon: '🚙', rate: 19, maxPax: 6 },
-  { id: 'Innova', label: 'Innova', desc: 'Toyota Innova', icon: '🚐', rate: 20, maxPax: 7 },
-  { id: 'Innova Crysta', label: 'Innova Crysta', desc: 'Premium SUV', icon: '✨', rate: 23, maxPax: 7 },
+  { id: 'Sedan', label: 'Sedan', desc: 'Swift Dzire, Etios', icon: '🚗', rate: 15, maxPax: 4 },
+  { id: 'SUV', label: 'SUV', desc: 'Innova, Ertiga', icon: '🚙', rate: 20, maxPax: 6 },
+  { id: 'Innova', label: 'Innova', desc: 'Toyota Innova', icon: '🚐', rate: 21, maxPax: 7 },
+  { id: 'Innova Crysta', label: 'Innova Crysta', desc: 'Premium SUV', icon: '✨', rate: 24, maxPax: 7 },
 ];
 
 const TIMES = Array.from({ length: 24 }, (_, i) => {

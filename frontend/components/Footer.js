@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const cities = ['Chennai', 'Coimbatore', 'Madurai', 'Trichy', 'Salem', 'Vellore', 'Bangalore', 'Tirunelveli', 'Nagercoil', 'Pondicherry'];
+const cities = ['Chennai', 'Bangalore', 'Hyderabad', 'Kochi', 'Trivandrum', 'Vijayawada', 'Coimbatore', 'Madurai', 'Trichy', 'Salem'];
 
 export default function Footer() {
   const year = new Date().getFullYear();

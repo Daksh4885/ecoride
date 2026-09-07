@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const tariff = [
-  { vehicle: 'Sedan', examples: 'Swift Dzire, Etios, Xcent', oneWay: 14, roundTrip: 13, batta: 300, maxPax: 4, icon: '🚗' },
-  { vehicle: 'SUV', examples: 'Ertiga, Marazzo, Xylo', oneWay: 19, roundTrip: 18, batta: 400, maxPax: 6, icon: '🚙' },
-  { vehicle: 'Innova', examples: 'Toyota Innova', oneWay: 20, roundTrip: 19, batta: 400, maxPax: 7, icon: '🚐' },
-  { vehicle: 'Innova Crysta', examples: 'Premium Innova Crysta', oneWay: 23, roundTrip: 22, batta: 500, maxPax: 7, icon: '✨' },
+  { vehicle: 'Sedan', examples: 'Swift Dzire, Etios, Xcent', oneWay: 15, roundTrip: 14, batta: 300, maxPax: 4, icon: '🚗' },
+  { vehicle: 'SUV', examples: 'Ertiga, Marazzo, Xylo', oneWay: 20, roundTrip: 19, batta: 400, maxPax: 6, icon: '🚙' },
+  { vehicle: 'Innova', examples: 'Toyota Innova', oneWay: 21, roundTrip: 20, batta: 400, maxPax: 7, icon: '🚐' },
+  { vehicle: 'Innova Crysta', examples: 'Premium Innova Crysta', oneWay: 24, roundTrip: 23, batta: 500, maxPax: 7, icon: '✨' },
 ];
 
 const extras = [
@@ -50,8 +50,8 @@ export default function Tariff() {
     <>
       <Head>
         <title>Drop Taxi Fare & Tariff — One Way Taxi Rate Per Km | EcoRide DropTaxi Tamil Nadu</title>
-        <meta name="description" content="EcoRide DropTaxi fare chart — Sedan ₹14/km, SUV ₹19/km, Innova ₹20/km, Innova Crysta ₹23/km. Transparent one-way & round trip taxi fares across Tamil Nadu & Bangalore. No hidden charges. Check fare for Chennai, Coimbatore, Madurai, Trichy routes." />
-        <meta name="keywords" content="drop taxi fare, one way taxi rate, taxi fare per km, drop taxi price, outstation cab fare, Chennai taxi fare, Coimbatore taxi rate, Madurai taxi price, Tamil Nadu taxi tariff, one way cab rate, drop taxi tariff chart, sedan taxi rate, SUV taxi fare, Innova taxi rate" />
+        <meta name="description" content="EcoRide DropTaxi fare chart — Sedan ₹15/km, SUV ₹20/km, Innova ₹21/km, Innova Crysta ₹24/km. Transparent one-way & round trip taxi fares across South India. No hidden charges. Check fare for Chennai, Bangalore, Hyderabad, Kochi routes." />
+        <meta name="keywords" content="drop taxi fare, one way taxi rate, taxi fare per km, drop taxi price, outstation cab fare, Chennai taxi fare, Coimbatore taxi rate, Madurai taxi price, South India taxi tariff, one way cab rate, drop taxi tariff chart, sedan taxi rate, SUV taxi fare, Innova taxi rate" />
 
         {/* Canonical */}
         <link rel="canonical" href="https://ecoride-droptaxi.vercel.app/tariff" />
@@ -60,13 +60,13 @@ export default function Tariff() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ecoride-droptaxi.vercel.app/tariff" />
         <meta property="og:title" content="Drop Taxi Fare & Tariff — EcoRide DropTaxi Tamil Nadu" />
-        <meta property="og:description" content="Sedan ₹14/km, SUV ₹19/km, Innova ₹20/km. Transparent one-way taxi fares across Tamil Nadu & Bangalore." />
+        <meta property="og:description" content="Sedan ₹15/km, SUV ₹20/km, Innova ₹21/km. Transparent one-way taxi fares across South India." />
         <meta property="og:site_name" content="EcoRide DropTaxi" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Drop Taxi Fare & Tariff — EcoRide DropTaxi" />
-        <meta name="twitter:description" content="Sedan ₹14/km, SUV ₹19/km. Transparent one-way taxi fares across Tamil Nadu." />
+        <meta name="twitter:description" content="Sedan ₹15/km, SUV ₹20/km. Transparent one-way taxi fares across South India." />
       </Head>
 
       <Navbar />

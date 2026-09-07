@@ -16,10 +16,10 @@ const localBusinessSchema = {
   "@type": "TaxiService",
   "name": "EcoRide DropTaxi",
   "alternateName": "EcoRide Drop Taxi Tamil Nadu",
-  "description": "Affordable one-way drop taxi and outstation cab service across Tamil Nadu & Bangalore. Pay only one-way fare with no return charges. Sedan ₹14/km, SUV ₹19/km, Innova ₹20/km.",
+  "description": "Affordable one-way drop taxi and outstation cab service across South India. Pay only one-way fare with no return charges. Sedan ₹15/km, SUV ₹20/km, Innova ₹21/km.",
   "url": "https://ecoride-droptaxi.vercel.app",
   "telephone": "+917019700584",
-  "priceRange": "₹14 - ₹23 per km",
+  "priceRange": "₹15 - ₹23 per km",
   "currenciesAccepted": "INR",
   "paymentAccepted": "Cash, UPI, GPay, PhonePe, Paytm",
   "openingHoursSpecification": {
@@ -30,7 +30,15 @@ const localBusinessSchema = {
   },
   "areaServed": [
     { "@type": "State", "name": "Tamil Nadu" },
+    { "@type": "State", "name": "Karnataka" },
+    { "@type": "State", "name": "Andhra Pradesh" },
+    { "@type": "State", "name": "Kerala" },
+    { "@type": "State", "name": "Telangana" },
     { "@type": "City", "name": "Chennai" },
+    { "@type": "City", "name": "Hyderabad" },
+    { "@type": "City", "name": "Kochi" },
+    { "@type": "City", "name": "Trivandrum" },
+    { "@type": "City", "name": "Vijayawada" },
     { "@type": "City", "name": "Coimbatore" },
     { "@type": "City", "name": "Madurai" },
     { "@type": "City", "name": "Trichy" },
@@ -73,7 +81,7 @@ const faqSchema = {
       "name": "What is EcoRide DropTaxi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "EcoRide DropTaxi offers one-way drop taxi, round trip taxi, and outstation cab services across Tamil Nadu and Bangalore. Our most popular routes include Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli, and Bangalore."
+        "text": "EcoRide DropTaxi offers one-way drop taxi, round trip taxi, and outstation cab services across South India. Our most popular routes include Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli, and Bangalore."
       }
     },
     {
@@ -81,7 +89,7 @@ const faqSchema = {
       "name": "What is the fare for one-way drop taxi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sedan: ₹14/km, SUV: ₹19/km, Innova: ₹20/km, Innova Crysta: ₹23/km. Minimum distance is 130 km for one-way trips. Driver batta, toll, and permit charges are extra where applicable."
+        "text": "Sedan: ₹15/km, SUV: ₹20/km, Innova: ₹21/km, Innova Crysta: ₹24/km. Minimum distance is 130 km for one-way trips. Driver batta, toll, and permit charges are extra where applicable."
       }
     },
     {
@@ -105,7 +113,7 @@ const faqSchema = {
       "name": "Which cities do you operate in?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We operate across all major Tamil Nadu cities including Chennai, Madurai, Trichy, Coimbatore, Salem, Vellore, Tirunelveli, Nagercoil, Kumbakonam, Erode, Puducherry, and Bangalore. We cover 200+ cities."
+        "text": "We operate across all major cities in South India including Chennai, Madurai, Trichy, Coimbatore, Salem, Vellore, Tirunelveli, Nagercoil, Kumbakonam, Erode, Puducherry, and Bangalore. We cover 200+ cities."
       }
     },
     {
@@ -133,7 +141,7 @@ const webSiteSchema = {
   "@type": "WebSite",
   "name": "EcoRide DropTaxi",
   "url": "https://ecoride-droptaxi.vercel.app",
-  "description": "One way drop taxi service across Tamil Nadu & Bangalore",
+  "description": "One way drop taxi service across South India",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://ecoride-droptaxi.vercel.app/?q={search_term_string}",
@@ -147,8 +155,8 @@ export default function Home() {
       <Head>
         {/* ── Primary SEO ── */}
         <title>Drop Taxi | One Way Taxi Service Tamil Nadu & Bangalore — EcoRide DropTaxi</title>
-        <meta name="description" content="EcoRide DropTaxi — #1 one-way drop taxi service in Tamil Nadu & Bangalore. Pay only one-way fare from ₹14/km. No return charge. Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli drop taxi. Book online or call +91 7019700584. 24/7 outstation cab service." />
-        <meta name="keywords" content="drop taxi, droptaxi, one way taxi, one way cab, outstation taxi, outstation cab, drop taxi Tamil Nadu, drop taxi Chennai, drop taxi Coimbatore, drop taxi Madurai, drop taxi Trichy, drop taxi Salem, drop taxi Vellore, drop taxi Bangalore, drop taxi Tirunelveli, drop taxi Tiruvannamalai, one way taxi Chennai, one way taxi Coimbatore, one way taxi Madurai, Chennai to Coimbatore taxi, Chennai to Madurai taxi, Chennai to Bangalore taxi, Chennai to Trichy taxi, Coimbatore to Chennai taxi, Madurai to Chennai taxi, Bangalore to Chennai taxi, outstation cab Tamil Nadu, airport taxi Chennai, airport cab Coimbatore, Tiruvannamalai to Chennai taxi, Tiruvannamalai to Bangalore taxi, one way drop taxi, cheap taxi Tamil Nadu, affordable cab service, 24/7 taxi service, book taxi online Tamil Nadu" />
+        <meta name="description" content="EcoRide DropTaxi — #1 one-way drop taxi service in South India. Pay only one-way fare from ₹15/km. No return charge. Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli drop taxi. Book online or call +91 7019700584. 24/7 outstation cab service." />
+        <meta name="keywords" content="drop taxi, droptaxi, one way taxi, one way cab, outstation taxi, outstation cab, drop taxi South India, drop taxi Kerala, drop taxi Karnataka, drop taxi Chennai, drop taxi Coimbatore, drop taxi Madurai, drop taxi Trichy, drop taxi Salem, drop taxi Vellore, drop taxi Bangalore, drop taxi Tirunelveli, drop taxi Tiruvannamalai, one way taxi Chennai, one way taxi Coimbatore, one way taxi Madurai, Chennai to Coimbatore taxi, Chennai to Madurai taxi, Chennai to Bangalore taxi, Chennai to Trichy taxi, Coimbatore to Chennai taxi, Madurai to Chennai taxi, Bangalore to Chennai taxi, outstation cab Tamil Nadu, airport taxi Chennai, airport cab Coimbatore, Tiruvannamalai to Chennai taxi, Tiruvannamalai to Bangalore taxi, one way drop taxi, cheap taxi Tamil Nadu, affordable cab service, 24/7 taxi service, book taxi online Tamil Nadu" />
 
         {/* ── Canonical URL ── */}
         <link rel="canonical" href="https://ecoride-droptaxi.vercel.app/" />
@@ -157,7 +165,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ecoride-droptaxi.vercel.app/" />
         <meta property="og:title" content="Drop Taxi | One Way Taxi Tamil Nadu & Bangalore — EcoRide DropTaxi" />
-        <meta property="og:description" content="Pay only one-way fare from ₹14/km! No return charge. Reliable drop taxi & outstation cab service across Tamil Nadu & Bangalore. Book online 24/7." />
+        <meta property="og:description" content="Pay only one-way fare from ₹15/km! No return charge. Reliable drop taxi & outstation cab service across South India. Book online 24/7." />
         <meta property="og:site_name" content="EcoRide DropTaxi" />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:image" content="https://ecoride-droptaxi.vercel.app/logo.png" />
@@ -165,7 +173,7 @@ export default function Home() {
         {/* ── Twitter Card ── */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Drop Taxi | One Way Taxi Service — EcoRide DropTaxi" />
-        <meta name="twitter:description" content="Pay only one-way fare from ₹14/km! No return charge. 24/7 drop taxi across Tamil Nadu & Bangalore." />
+        <meta name="twitter:description" content="Pay only one-way fare from ₹15/km! No return charge. 24/7 drop taxi across South India." />
         <meta name="twitter:image" content="https://ecoride-droptaxi.vercel.app/logo.png" />
 
         {/* ── Favicon ── */}
@@ -211,7 +219,7 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 bg-brand/20 text-green-300 text-sm font-semibold px-4 py-2 rounded-full mb-6">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                Available 24/7 across Tamil Nadu & Bangalore
+                Available 24/7 across South India
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
                 Drop Taxi &<br />
@@ -255,7 +263,7 @@ export default function Home() {
         {/* Quick fare banner */}
         <section className="bg-brand text-white py-4" aria-label="Taxi fare rates">
           <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-6 text-sm font-semibold">
-            <span>🚗 Sedan — ₹14/km</span>
+            <span>🚗 Sedan — ₹15/km</span>
             <span>🚙 SUV — ₹19/km</span>
             <span>🚐 Innova — ₹20/km</span>
             <span>✨ Innova Crysta — ₹23/km</span>
@@ -272,21 +280,21 @@ export default function Home() {
         {/* ── SEO Content Block (hidden visually, crawlable by Google) ── */}
         <section className="bg-gray-50 py-16" aria-label="About EcoRide DropTaxi services">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-dark mb-4">One Way Drop Taxi Service in Tamil Nadu & Bangalore</h2>
+            <h2 className="text-2xl font-bold text-dark mb-4">One Way Drop Taxi Service in South India</h2>
             <div className="prose prose-gray max-w-none text-gray-600 text-sm leading-relaxed space-y-4">
               <p>
-                <strong>EcoRide DropTaxi</strong> is Tamil Nadu's most trusted <strong>one-way drop taxi</strong> and <strong>outstation cab service</strong>. 
-                We offer affordable drop taxi rides starting from just <strong>₹14 per km</strong> for sedans. Unlike traditional taxi services, 
+                <strong>EcoRide DropTaxi</strong> is South India's most trusted <strong>one-way drop taxi</strong> and <strong>outstation cab service</strong>. 
+                We offer affordable drop taxi rides starting from just <strong>₹15 per km</strong> for sedans. Unlike traditional taxi services, 
                 you <strong>pay only for one way</strong> — no return fare, no hidden charges.
               </p>
               <p>
-                Our <strong>drop taxi service</strong> covers all major cities in Tamil Nadu including <strong>Chennai, Coimbatore, Madurai, Trichy, 
+                Our <strong>drop taxi service</strong> covers all major cities in South India including <strong>Chennai, Coimbatore, Madurai, Trichy, 
                 Salem, Vellore, Tirunelveli, Nagercoil, Tiruvannamalai, Pondicherry, Thanjavur, Erode, Kumbakonam</strong>, and <strong>Bangalore</strong>. 
                 Whether you need a <strong>Chennai to Coimbatore taxi</strong>, <strong>Chennai to Madurai cab</strong>, <strong>Bangalore to Chennai drop taxi</strong>, 
                 or any intercity route — we've got you covered with 200+ city-to-city routes.
               </p>
               <p>
-                We provide a range of well-maintained, AC vehicles for your comfort: <strong>Sedan (Swift Dzire, Etios)</strong> at ₹14/km, 
+                We provide a range of well-maintained, AC vehicles for your comfort: <strong>Sedan (Swift Dzire, Etios)</strong> at ₹15/km, 
                 <strong>SUV (Innova, Ertiga)</strong> at ₹19/km, <strong>Toyota Innova</strong> at ₹20/km, and <strong>Innova Crysta</strong> at ₹23/km. 
                 All our drivers are professional, courteous, and experienced with outstation routes.
               </p>

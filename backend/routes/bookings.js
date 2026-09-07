@@ -5,10 +5,10 @@ const { sendWhatsAppNotification } = require('../services/whatsapp');
 
 // ─── Fare Calculation Helper ───────────────────────────────────────────────────
 const RATES = {
-  'Sedan':        { oneWay: 14, roundTrip: 13, batta: 300 },
-  'SUV':          { oneWay: 19, roundTrip: 18, batta: 400 },
-  'Innova':       { oneWay: 20, roundTrip: 19, batta: 400 },
-  'Innova Crysta':{ oneWay: 23, roundTrip: 22, batta: 500 },
+  'Sedan':        { oneWay: 15, roundTrip: 14, batta: 300 },
+  'SUV':          { oneWay: 20, roundTrip: 19, batta: 400 },
+  'Innova':       { oneWay: 21, roundTrip: 20, batta: 400 },
+  'Innova Crysta':{ oneWay: 24, roundTrip: 23, batta: 500 },
 };
 
 const MIN_DISTANCE = { oneWay: 130, roundTrip: 250 };

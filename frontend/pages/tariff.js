@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const tariff = [
-  { vehicle: 'Sedan', examples: 'Swift Dzire, Etios, Xcent', oneWay: 15, roundTrip: 14, batta: 300, maxPax: 4, icon: '🚗' },
+  { vehicle: 'Sedan', examples: 'Swift Dzire, Etios, Xcent', oneWay: 15, roundTrip: 14, batta: 400, maxPax: 4, icon: '🚗' },
   { vehicle: 'SUV', examples: 'Ertiga, Marazzo, Xylo', oneWay: 20, roundTrip: 19, batta: 400, maxPax: 6, icon: '🚙' },
   { vehicle: 'Innova', examples: 'Toyota Innova', oneWay: 21, roundTrip: 20, batta: 400, maxPax: 7, icon: '🚐' },
   { vehicle: 'Innova Crysta', examples: 'Premium Innova Crysta', oneWay: 24, roundTrip: 23, batta: 500, maxPax: 7, icon: '✨' },

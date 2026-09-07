@@ -5,7 +5,7 @@ const { sendWhatsAppNotification } = require('../services/whatsapp');
 
 // ─── Fare Calculation Helper ───────────────────────────────────────────────────
 const RATES = {
-  'Sedan':        { oneWay: 15, roundTrip: 14, batta: 300 },
+  'Sedan':        { oneWay: 15, roundTrip: 14, batta: 400 },
   'SUV':          { oneWay: 20, roundTrip: 19, batta: 400 },
   'Innova':       { oneWay: 21, roundTrip: 20, batta: 400 },
   'Innova Crysta':{ oneWay: 24, roundTrip: 23, batta: 500 },

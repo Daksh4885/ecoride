@@ -83,8 +83,15 @@ const bookingSchema = new mongoose.Schema({
 // Auto-generate bookingId before saving
 bookingSchema.pre('validate', async function (next) {
   if (!this.bookingId) {
-    const count = await mongoose.model('Booking').countDocuments();
-    const pad = String(count + 1).padStart(6, '0');
+    const lastBooking = await mongoose.model('Booking').findOne().sort({ createdAt: -1 });
+    let nextNum = 1;
+    if (lastBooking && lastBooking.bookingId) {
+      const parts = lastBooking.bookingId.split('-');
+      if (parts.length === 3 && !isNaN(parts[2])) {
+        nextNum = parseInt(parts[2], 10) + 1;
+      }
+    }
+    const pad = String(nextNum).padStart(6, '0');
     this.bookingId = `ECO-${new Date().getFullYear()}-${pad}`;
   }
   next();

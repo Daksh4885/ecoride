@@ -125,7 +125,7 @@ router.post('/', async (req, res) => {
 
   } catch (err) {
     console.error('Booking error:', err);
-    res.status(500).json({ success: false, message: 'Server error. Please call us at +91 7019700584.' });
+    res.status(500).json({ success: false, message: 'Server error: ' + err.message });
   }
 });
 

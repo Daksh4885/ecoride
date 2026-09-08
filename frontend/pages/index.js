@@ -209,9 +209,9 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
             {/* Left — Booking Form */}
             <div>
-              <center><h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Book Your <span className="text-brand-light">One Way Ride</span>
-              </h3></center>
+              <center><h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                Book Your <span className="text-brand-light">One Way Ride</span> Now
+              </h2></center>
               <BookingForm />
             </div>
 

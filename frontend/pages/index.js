@@ -17,7 +17,7 @@ const localBusinessSchema = {
   "name": "EcoRide DropTaxi",
   "alternateName": "EcoRide Drop Taxi Tamil Nadu",
   "description": "Affordable one-way drop taxi and outstation cab service across South India. Pay only one-way fare with no return charges. Sedan ₹15/km, SUV ₹20/km, Innova ₹21/km.",
-  "url": "https://ecoride-droptaxi.vercel.app",
+  "url": "https://www.ecoridedroptaxi.com",
   "telephone": "+917019700584",
   "priceRange": "₹15 - ₹23 per km",
   "currenciesAccepted": "INR",
@@ -140,11 +140,11 @@ const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "EcoRide DropTaxi",
-  "url": "https://ecoride-droptaxi.vercel.app",
+  "url": "https://www.ecoridedroptaxi.com",
   "description": "One way drop taxi service across South India",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://ecoride-droptaxi.vercel.app/?q={search_term_string}",
+    "target": "https://www.ecoridedroptaxi.com/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -159,22 +159,22 @@ export default function Home() {
         <meta name="keywords" content="drop taxi, droptaxi, one way taxi, one way cab, outstation taxi, outstation cab, drop taxi South India, drop taxi Kerala, drop taxi Karnataka, drop taxi Chennai, drop taxi Coimbatore, drop taxi Madurai, drop taxi Trichy, drop taxi Salem, drop taxi Vellore, drop taxi Bangalore, drop taxi Tirunelveli, drop taxi Tiruvannamalai, one way taxi Chennai, one way taxi Coimbatore, one way taxi Madurai, Chennai to Coimbatore taxi, Chennai to Madurai taxi, Chennai to Bangalore taxi, Chennai to Trichy taxi, Coimbatore to Chennai taxi, Madurai to Chennai taxi, Bangalore to Chennai taxi, outstation cab Tamil Nadu, airport taxi Chennai, airport cab Coimbatore, Tiruvannamalai to Chennai taxi, Tiruvannamalai to Bangalore taxi, one way drop taxi, cheap taxi Tamil Nadu, affordable cab service, 24/7 taxi service, book taxi online Tamil Nadu" />
 
         {/* ── Canonical URL ── */}
-        <link rel="canonical" href="https://ecoride-droptaxi.vercel.app/" />
+        <link rel="canonical" href="https://www.ecoridedroptaxi.com/" />
 
         {/* ── Open Graph (Facebook, WhatsApp, LinkedIn) ── */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ecoride-droptaxi.vercel.app/" />
+        <meta property="og:url" content="https://www.ecoridedroptaxi.com/" />
         <meta property="og:title" content="Drop Taxi | One Way Taxi Tamil Nadu & Bangalore — EcoRide DropTaxi" />
         <meta property="og:description" content="Pay only one-way fare from ₹15/km! No return charge. Reliable drop taxi & outstation cab service across South India. Book online 24/7." />
         <meta property="og:site_name" content="EcoRide DropTaxi" />
         <meta property="og:locale" content="en_IN" />
-        <meta property="og:image" content="https://ecoride-droptaxi.vercel.app/logo.png" />
+        <meta property="og:image" content="https://www.ecoridedroptaxi.com/logo.png" />
 
         {/* ── Twitter Card ── */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Drop Taxi | One Way Taxi Service — EcoRide DropTaxi" />
         <meta name="twitter:description" content="Pay only one-way fare from ₹15/km! No return charge. 24/7 drop taxi across South India." />
-        <meta name="twitter:image" content="https://ecoride-droptaxi.vercel.app/logo.png" />
+        <meta name="twitter:image" content="https://www.ecoridedroptaxi.com/logo.png" />
 
         {/* ── Favicon ── */}
         <link rel="icon" href="/logo.png" type="image/png" />

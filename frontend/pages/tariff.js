@@ -54,11 +54,11 @@ export default function Tariff() {
         <meta name="keywords" content="drop taxi fare, one way taxi rate, taxi fare per km, drop taxi price, outstation cab fare, Chennai taxi fare, Coimbatore taxi rate, Madurai taxi price, South India taxi tariff, one way cab rate, drop taxi tariff chart, sedan taxi rate, SUV taxi fare, Innova taxi rate" />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://ecoride-droptaxi.vercel.app/tariff" />
+        <link rel="canonical" href="https://www.ecoridedroptaxi.com/tariff" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ecoride-droptaxi.vercel.app/tariff" />
+        <meta property="og:url" content="https://www.ecoridedroptaxi.com/tariff" />
         <meta property="og:title" content="Drop Taxi Fare & Tariff — EcoRide DropTaxi Tamil Nadu" />
         <meta property="og:description" content="Sedan ₹15/km, SUV ₹20/km, Innova ₹21/km. Transparent one-way taxi fares across South India." />
         <meta property="og:site_name" content="EcoRide DropTaxi" />

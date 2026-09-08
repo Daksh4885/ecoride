@@ -154,7 +154,7 @@ export default function Home() {
     <>
       <Head>
         {/* ── Primary SEO ── */}
-        <title>Drop Taxi | One Way Taxi Service Tamil Nadu & Bangalore — EcoRide DropTaxi</title>
+        <title>Drop Taxi | One Way Taxi Service All Over South India — EcoRide DropTaxi</title>
         <meta name="description" content="EcoRide DropTaxi — #1 one-way drop taxi service in South India. Pay only one-way fare from ₹15/km. No return charge. Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli drop taxi. Book online or call +91 7019700584. 24/7 outstation cab service." />
         <meta name="keywords" content="drop taxi, droptaxi, one way taxi, one way cab, outstation taxi, outstation cab, drop taxi South India, drop taxi Kerala, drop taxi Karnataka, drop taxi Chennai, drop taxi Coimbatore, drop taxi Madurai, drop taxi Trichy, drop taxi Salem, drop taxi Vellore, drop taxi Bangalore, drop taxi Tirunelveli, drop taxi Tiruvannamalai, one way taxi Chennai, one way taxi Coimbatore, one way taxi Madurai, Chennai to Coimbatore taxi, Chennai to Madurai taxi, Chennai to Bangalore taxi, Chennai to Trichy taxi, Coimbatore to Chennai taxi, Madurai to Chennai taxi, Bangalore to Chennai taxi, outstation cab Tamil Nadu, airport taxi Chennai, airport cab Coimbatore, Tiruvannamalai to Chennai taxi, Tiruvannamalai to Bangalore taxi, one way drop taxi, cheap taxi Tamil Nadu, affordable cab service, 24/7 taxi service, book taxi online Tamil Nadu" />
 
@@ -210,7 +210,7 @@ export default function Home() {
             {/* Left — Booking Form */}
             <div>
               <center><h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Book Your <span className="text-brand-light">One Way Ride</span> Now
+                Book Your <span className="text-brand-light">One Way Ride</span>
               </h3></center>
               <BookingForm />
             </div>

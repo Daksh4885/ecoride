@@ -160,15 +160,15 @@ export default function BookingForm() {
       <div className="flex">
         {['one-way', 'round-trip'].map(t => (
           <button key={t} onClick={() => setTab(t)}
-            className={`flex-1 py-4 font-bold text-sm uppercase tracking-wide transition-all ${tab === t ? 'bg-brand text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}>
+            className={`flex-1 py-3 md:py-4 font-bold text-xs md:text-sm uppercase tracking-wide transition-all ${tab === t ? 'bg-brand text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}>
             {t === 'one-way' ? '→ One Way' : '⇄ Round Trip'}
           </button>
         ))}
       </div>
 
-      <div className="p-6 space-y-4">
+      <div className="p-4 md:p-6 space-y-3 md:space-y-4">
         {/* Pickup & Drop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           <div>
             <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">📍 Pickup Location</label>
             <div className="relative flex items-center">
@@ -252,7 +252,7 @@ export default function BookingForm() {
         </div>
 
         {/* Date / Time / Days */}
-        <div className={`grid gap-4 ${tab === 'round-trip' ? 'grid-cols-3' : 'grid-cols-2'}`}>
+        <div className={`grid gap-3 md:gap-4 ${tab === 'round-trip' ? 'grid-cols-3' : 'grid-cols-2'}`}>
           <div>
             <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">📅 Pickup Date</label>
             <input type="date" value={form.pickupDate} onChange={e => f('pickupDate', e.target.value)}
@@ -279,22 +279,22 @@ export default function BookingForm() {
         {/* Vehicle Type */}
         <div>
           <label className="block text-xs font-semibold text-gray-500 uppercase mb-2">🚗 Vehicle Type</label>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-4 gap-1 md:gap-2">
             {VEHICLES.map(v => (
               <button key={v.id} onClick={() => f('vehicleType', v.id)}
-                className={`p-3 rounded-xl border-2 text-left transition-all ${form.vehicleType === v.id ? 'border-brand bg-brand-50' : 'border-gray-200 hover:border-gray-300'}`}>
-                <div className="text-xl mb-1">{v.icon}</div>
-                <div className="font-bold text-sm text-dark">{v.label}</div>
-                <div className="text-gray-400 text-xs">{v.desc}</div>
-                <div className="text-brand font-bold text-xs mt-1">₹{v.rate}/km</div>
+                className={`p-1 md:p-3 rounded-xl border-2 text-center md:text-left transition-all flex flex-col items-center md:items-start justify-center ${form.vehicleType === v.id ? 'border-brand bg-brand-50 shadow-sm' : 'border-gray-200 hover:border-gray-300'}`}>
+                <div className="text-lg md:text-xl mb-0.5 md:mb-1">{v.icon}</div>
+                <div className="font-bold text-[10px] md:text-sm text-dark leading-tight whitespace-nowrap overflow-hidden text-ellipsis w-full text-center md:text-left">{v.label}</div>
+                <div className="hidden md:block text-gray-400 text-xs">{v.desc}</div>
+                <div className="text-brand font-bold text-[10px] md:text-xs mt-0.5 md:mt-1">₹{v.rate}/km</div>
               </button>
             ))}
           </div>
         </div>
 
         {/* Name, Mobile, Persons */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="col-span-2 md:col-span-1">
             <label className="block text-xs font-semibold text-gray-500 uppercase mb-1">👤 Your Name</label>
             <input value={form.name} onChange={e => f('name', e.target.value)} placeholder="Full Name"
               className={`input-field ${errors.name ? 'border-red-400' : ''}`} />
@@ -337,7 +337,7 @@ export default function BookingForm() {
 
         {/* Submit */}
         <button onClick={handleSubmit} disabled={loading}
-          className={`w-full py-4 rounded-xl font-black text-lg transition-all shadow-lg ${loading ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-brand text-white hover:bg-brand-dark active:scale-95 hover:shadow-xl'}`}>
+          className={`w-full py-3 md:py-4 rounded-xl font-black text-base md:text-lg transition-all shadow-lg ${loading ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-brand text-white hover:bg-brand-dark active:scale-95 hover:shadow-xl'}`}>
           {loading ? (
             <span className="flex items-center justify-center gap-2">
               <div className="w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin"></div>

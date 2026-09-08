@@ -16,7 +16,7 @@
     @apply bg-white text-brand font-bold px-6 py-3 rounded-lg border-2 border-brand hover:bg-brand-50 transition-all duration-200;
   }
   .input-field {
-    @apply w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all bg-white;
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2 md:px-4 md:py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all bg-white;
   }
   .section-title {
     @apply text-3xl md:text-4xl font-bold text-dark mb-3;

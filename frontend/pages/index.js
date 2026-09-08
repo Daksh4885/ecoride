@@ -209,9 +209,9 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
             {/* Left — Booking Form */}
             <div>
-              <center><h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <center><h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Book Your <span className="text-brand-light">One Way Ride</span> Now
-              </h2></center>
+              </h3></center>
               <BookingForm />
             </div>
 
@@ -283,24 +283,24 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-dark mb-4">One Way Drop Taxi Service in South India</h2>
             <div className="prose prose-gray max-w-none text-gray-600 text-sm leading-relaxed space-y-4">
               <p>
-                <strong>EcoRide DropTaxi</strong> is South India's most trusted <strong>one-way drop taxi</strong> and <strong>outstation cab service</strong>. 
-                We offer affordable drop taxi rides starting from just <strong>₹15 per km</strong> for sedans. Unlike traditional taxi services, 
+                <strong>EcoRide DropTaxi</strong> is South India's most trusted <strong>one-way drop taxi</strong> and <strong>outstation cab service</strong>.
+                We offer affordable drop taxi rides starting from just <strong>₹15 per km</strong> for sedans. Unlike traditional taxi services,
                 you <strong>pay only for one way</strong> — no return fare, no hidden charges.
               </p>
               <p>
-                Our <strong>drop taxi service</strong> covers all major cities in South India including <strong>Chennai, Coimbatore, Madurai, Trichy, 
-                Salem, Vellore, Tirunelveli, Nagercoil, Tiruvannamalai, Pondicherry, Thanjavur, Erode, Kumbakonam</strong>, and <strong>Bangalore</strong>. 
-                Whether you need a <strong>Chennai to Coimbatore taxi</strong>, <strong>Chennai to Madurai cab</strong>, <strong>Bangalore to Chennai drop taxi</strong>, 
+                Our <strong>drop taxi service</strong> covers all major cities in South India including <strong>Chennai, Coimbatore, Madurai, Trichy,
+                  Salem, Vellore, Tirunelveli, Nagercoil, Tiruvannamalai, Pondicherry, Thanjavur, Erode, Kumbakonam</strong>, and <strong>Bangalore</strong>.
+                Whether you need a <strong>Chennai to Coimbatore taxi</strong>, <strong>Chennai to Madurai cab</strong>, <strong>Bangalore to Chennai drop taxi</strong>,
                 or any intercity route — we've got you covered with 200+ city-to-city routes.
               </p>
               <p>
-                We provide a range of well-maintained, AC vehicles for your comfort: <strong>Sedan (Swift Dzire, Etios)</strong> at ₹15/km, 
-                <strong>SUV (Innova, Ertiga)</strong> at ₹19/km, <strong>Toyota Innova</strong> at ₹20/km, and <strong>Innova Crysta</strong> at ₹23/km. 
+                We provide a range of well-maintained, AC vehicles for your comfort: <strong>Sedan (Swift Dzire, Etios)</strong> at ₹15/km,
+                <strong>SUV (Innova, Ertiga)</strong> at ₹19/km, <strong>Toyota Innova</strong> at ₹20/km, and <strong>Innova Crysta</strong> at ₹23/km.
                 All our drivers are professional, courteous, and experienced with outstation routes.
               </p>
               <p>
-                Book your <strong>one way taxi</strong> online 24/7 or call us at <strong>+91 7019700584</strong>. 
-                We also offer <strong>round trip taxi</strong>, <strong>airport taxi transfers</strong>, <strong>hill station trips</strong> (Ooty, Kodaikanal, Yelagiri), 
+                Book your <strong>one way taxi</strong> online 24/7 or call us at <strong>+91 7019700584</strong>.
+                We also offer <strong>round trip taxi</strong>, <strong>airport taxi transfers</strong>, <strong>hill station trips</strong> (Ooty, Kodaikanal, Yelagiri),
                 and <strong>corporate cab services</strong> across South India.
               </p>
             </div>

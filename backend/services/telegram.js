@@ -6,12 +6,14 @@ const axios = require('axios');
  */
 async function sendTelegramNotification(booking) {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const chatIdsStr = process.env.TELEGRAM_CHAT_ID;
 
-  if (!botToken || !chatId) {
+  if (!botToken || !chatIdsStr) {
     console.warn('⚠️  Telegram credentials not set. Skipping notification.');
     return { success: false, reason: 'credentials_missing' };
   }
+
+  const chatIds = chatIdsStr.split(',').map(id => id.trim()).filter(id => id);
 
   const fareStr = booking.estimatedFare
     ? `₹${booking.estimatedFare.toLocaleString('en-IN')} (approx)`
@@ -42,19 +44,19 @@ ${booking.tripType === 'round-trip' ? `📆 *Days:* ${booking.noOfDays}\n` : ''}
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
   try {
-    const response = await axios.post(url, {
-      chat_id: chatId,
-      text: message,
-      parse_mode: 'Markdown'
-    });
+    // Send to all chat IDs concurrently
+    const promises = chatIds.map(chatId => 
+      axios.post(url, {
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'Markdown'
+      })
+    );
 
-    if (response.data.ok) {
-      console.log('✅ Telegram notification sent successfully');
-      return { success: true };
-    } else {
-      console.error('❌ Telegram notification failed:', response.data);
-      return { success: false, reason: response.data.description };
-    }
+    await Promise.all(promises);
+
+    console.log('✅ Telegram notifications sent successfully to all recipients');
+    return { success: true };
   } catch (error) {
     console.error('❌ Telegram notification error:', error.response ? error.response.data : error.message);
     return { success: false, reason: error.message };

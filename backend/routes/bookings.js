@@ -105,6 +105,7 @@ router.post('/', async (req, res) => {
     res.status(201).json({
       success: true,
       message: 'Booking confirmed! You will receive a confirmation call from EcoRide team.',
+      whatsappError: !waResult.success ? waResult.reason : undefined,
       booking: {
         bookingId: booking.bookingId,
         name: booking.name,

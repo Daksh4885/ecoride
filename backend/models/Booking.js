@@ -69,7 +69,7 @@ const bookingSchema = new mongoose.Schema({
     enum: ['pending', 'confirmed', 'completed', 'cancelled'],
     default: 'pending'
   },
-  whatsappNotified: {
+  telegramNotified: {
     type: Boolean,
     default: false
   },

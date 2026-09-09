@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
-const { sendWhatsAppNotification } = require('../services/whatsapp');
+const { sendTelegramNotification } = require('../services/telegram');
 
 // ─── Fare Calculation Helper ───────────────────────────────────────────────────
 const RATES = {
@@ -94,10 +94,10 @@ router.post('/', async (req, res) => {
 
     await booking.save();
 
-    // Send WhatsApp notification to operator
-    const waResult = await sendWhatsAppNotification(booking);
-    if (waResult.success) {
-      booking.whatsappNotified = true;
+    // Send Telegram notification to operator
+    const tgResult = await sendTelegramNotification(booking);
+    if (tgResult.success) {
+      booking.telegramNotified = true;
       booking.notifiedAt = new Date();
       await booking.save();
     }
@@ -105,7 +105,7 @@ router.post('/', async (req, res) => {
     res.status(201).json({
       success: true,
       message: 'Booking confirmed! You will receive a confirmation call from EcoRide team.',
-      whatsappError: !waResult.success ? waResult.reason : undefined,
+      telegramError: !tgResult.success ? tgResult.reason : undefined,
       booking: {
         bookingId: booking.bookingId,
         name: booking.name,

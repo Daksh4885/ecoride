@@ -29,20 +29,24 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">Services</h4>
             <ul className="space-y-2 text-sm">
-              {['One Way Drop Taxi', 'Round Trip Taxi', 'Outstation Cabs', 'Airport Taxi', 'Hill Station Trips', 'Corporate Cab Service'].map(s => (
+              <li><Link href="/services/airport-taxi" className="hover:text-brand transition-colors">Airport Taxi</Link></li>
+              <li><Link href="/services/outstation-cabs" className="hover:text-brand transition-colors">Outstation Cabs</Link></li>
+              {['One Way Drop Taxi', 'Round Trip Taxi', 'Hill Station Trips', 'Corporate Cab Service'].map(s => (
                 <li key={s}><Link href="/#booking" className="hover:text-brand transition-colors">{s}</Link></li>
               ))}
             </ul>
           </div>
 
-          {/* Popular Cities */}
+          {/* Top Routes */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">Popular Cities</h4>
-            <div className="flex flex-wrap gap-2">
-              {cities.map(c => (
-                <Link key={c} href="/#booking" className="text-xs bg-white/5 hover:bg-brand hover:text-white px-2 py-1 rounded transition-all">{c}</Link>
-              ))}
-            </div>
+            <h4 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">Top Routes</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/routes/chennai-to-bangalore" className="hover:text-brand transition-colors">Chennai to Bangalore Taxi</Link></li>
+              <li><Link href="/routes/chennai-to-coimbatore" className="hover:text-brand transition-colors">Chennai to Coimbatore Taxi</Link></li>
+              <li><Link href="/routes/chennai-to-madurai" className="hover:text-brand transition-colors">Chennai to Madurai Taxi</Link></li>
+              <li><Link href="/routes/bangalore-to-chennai" className="hover:text-brand transition-colors">Bangalore to Chennai Taxi</Link></li>
+              <li><Link href="/routes/coimbatore-to-chennai" className="hover:text-brand transition-colors">Coimbatore to Chennai Taxi</Link></li>
+            </ul>
           </div>
 
           {/* Contact */}

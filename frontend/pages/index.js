@@ -10,151 +10,13 @@ import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 
-// JSON-LD Structured Data for LocalBusiness (Taxi Service)
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "TaxiService",
-  "name": "EcoRide DropTaxi",
-  "alternateName": "EcoRide Drop Taxi Tamil Nadu",
-  "description": "Affordable one-way drop taxi and outstation cab service across South India. Pay only one-way fare with no return charges. Sedan ₹15/km, SUV ₹20/km, Innova ₹21/km.",
-  "url": "https://www.ecoridedroptaxi.com",
-  "telephone": "+917019700584",
-  "priceRange": "₹15 - ₹23 per km",
-  "currenciesAccepted": "INR",
-  "paymentAccepted": "Cash, UPI, GPay, PhonePe, Paytm",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "opens": "00:00",
-    "closes": "23:59"
-  },
-  "areaServed": [
-    { "@type": "State", "name": "Tamil Nadu" },
-    { "@type": "State", "name": "Karnataka" },
-    { "@type": "State", "name": "Andhra Pradesh" },
-    { "@type": "State", "name": "Kerala" },
-    { "@type": "State", "name": "Telangana" },
-    { "@type": "City", "name": "Chennai" },
-    { "@type": "City", "name": "Hyderabad" },
-    { "@type": "City", "name": "Kochi" },
-    { "@type": "City", "name": "Trivandrum" },
-    { "@type": "City", "name": "Vijayawada" },
-    { "@type": "City", "name": "Coimbatore" },
-    { "@type": "City", "name": "Madurai" },
-    { "@type": "City", "name": "Trichy" },
-    { "@type": "City", "name": "Salem" },
-    { "@type": "City", "name": "Vellore" },
-    { "@type": "City", "name": "Tirunelveli" },
-    { "@type": "City", "name": "Tiruvannamalai" },
-    { "@type": "City", "name": "Bangalore" },
-    { "@type": "City", "name": "Pondicherry" },
-    { "@type": "City", "name": "Nagercoil" },
-    { "@type": "City", "name": "Thanjavur" },
-    { "@type": "City", "name": "Erode" },
-    { "@type": "City", "name": "Kumbakonam" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Drop Taxi Services",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "One Way Drop Taxi" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Round Trip Taxi" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outstation Cab Service" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Airport Taxi Transfer" } }
-    ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "2500",
-    "bestRating": "5"
-  }
-};
-
-// JSON-LD FAQPage Schema (enables FAQ rich results in Google)
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is EcoRide DropTaxi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "EcoRide DropTaxi offers one-way drop taxi, round trip taxi, and outstation cab services across South India. Our most popular routes include Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli, and Bangalore."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the fare for one-way drop taxi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sedan: ₹15/km, SUV: ₹20/km, Innova: ₹21/km, Innova Crysta: ₹24/km. Minimum distance is 130 km for one-way trips. Driver batta, toll, and permit charges are extra where applicable."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I pay for the return trip in a one-way taxi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No! You pay only ONE WAY fare. There are no return charges. You are billed only for the actual distance from pickup to drop."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I book a drop taxi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can book online using the form on our homepage, or call/WhatsApp us at +91 7019700584. Simply enter your pickup & drop location, date, time, vehicle type, and your contact details to get instant confirmation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which cities do you operate in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We operate across all major cities in South India including Chennai, Madurai, Trichy, Coimbatore, Salem, Vellore, Tirunelveli, Nagercoil, Kumbakonam, Erode, Puducherry, and Bangalore. We cover 200+ cities."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What payment methods do you accept?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We accept cash, UPI (GPay, PhonePe, Paytm), and digital wallets. Payment can be made to the driver at the end of the trip."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is the total fare calculated?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Fare = Distance × Per km rate + Driver Batta. Toll fees, hill charges, state permits, and parking are extra and paid at actuals."
-      }
-    }
-  ]
-};
-
-// JSON-LD WebSite schema (enables sitelinks search box in Google)
-const webSiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "EcoRide DropTaxi",
-  "url": "https://www.ecoridedroptaxi.com",
-  "description": "One way drop taxi service across South India",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.ecoridedroptaxi.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-};
-
+import { localBusinessSchema, faqSchema, webSiteSchema } from '../utils/schema';
 export default function Home() {
   return (
     <>
       <Head>
         {/* ── Primary SEO ── */}
-        <title>Drop Taxi | One Way Taxi Service All Over South India — EcoRide DropTaxi</title>
+        <title>One Way Drop Taxi in Tamil Nadu | EcoRide</title>
         <meta name="description" content="EcoRide DropTaxi — #1 one-way drop taxi service in South India. Pay only one-way fare from ₹15/km. No return charge. Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli drop taxi. Book online or call +91 7019700584. 24/7 outstation cab service." />
         <meta name="keywords" content="drop taxi, droptaxi, one way taxi, one way cab, outstation taxi, outstation cab, drop taxi South India, drop taxi Kerala, drop taxi Karnataka, drop taxi Chennai, drop taxi Coimbatore, drop taxi Madurai, drop taxi Trichy, drop taxi Salem, drop taxi Vellore, drop taxi Bangalore, drop taxi Tirunelveli, drop taxi Tiruvannamalai, one way taxi Chennai, one way taxi Coimbatore, one way taxi Madurai, Chennai to Coimbatore taxi, Chennai to Madurai taxi, Chennai to Bangalore taxi, Chennai to Trichy taxi, Coimbatore to Chennai taxi, Madurai to Chennai taxi, Bangalore to Chennai taxi, outstation cab Tamil Nadu, airport taxi Chennai, airport cab Coimbatore, Tiruvannamalai to Chennai taxi, Tiruvannamalai to Bangalore taxi, one way drop taxi, cheap taxi Tamil Nadu, affordable cab service, 24/7 taxi service, book taxi online Tamil Nadu" />
 
@@ -222,8 +84,8 @@ export default function Home() {
                 Available 24/7 across South India
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-                Drop Taxi &<br />
-                <span className="text-brand-light">One Way Taxi</span><br />
+                Tamil Nadu's Premium<br />
+                <span className="text-brand-light">One-Way Drop Taxi</span><br />
                 Service
               </h1>
               <p className="text-gray-300 text-xl mb-8 leading-relaxed">

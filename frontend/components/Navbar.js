@@ -11,12 +11,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <img src="/logo.png" alt="EcoRide DropTaxi Logo" className="h-10 w-auto object-contain transition-transform group-hover:scale-105" />
-            <div>
-              <div className="text-brand font-black text-xl leading-tight">EcoRide</div>
-              <div className="text-gray-500 text-xs font-medium leading-tight tracking-wider">D r o p T a x i</div>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <img src="/logo.png" alt="EcoRide DropTaxi Logo" className="h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}

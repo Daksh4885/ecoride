@@ -17,8 +17,9 @@ export default function Document() {
         <meta name="geo.region" content="IN-TN" />
         <meta name="geo.placename" content="Tamil Nadu, India" />
 
-        {/* Apple touch icon */}
-        <link rel="apple-touch-icon" href="/logo.png" />
+        {/* Favicon & Apple touch icon */}
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
       <body>
         <Main />

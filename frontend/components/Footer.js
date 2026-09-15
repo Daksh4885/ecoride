@@ -10,12 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/logo.png" alt="EcoRide DropTaxi Logo" className="h-11 w-auto object-contain bg-white/10 p-1 rounded-lg" />
-              <div>
-                <div className="text-white font-black text-xl">EcoRide</div>
-                <div className="text-green-400 text-xs font-semibold tracking-wider">DropTaxi</div>
-              </div>
+            <div className="mb-4">
+              <img src="/logo.png" alt="EcoRide DropTaxi Logo" className="h-20 w-auto object-contain bg-white p-2 rounded-lg" />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">Tamil Nadu's trusted one-way drop taxi service. Pay only for the distance you travel — no return charges!</p>
             <div className="flex gap-3">

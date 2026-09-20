@@ -1,8 +1,25 @@
-import { seoRoutes } from '../data/seoRoutes';
+import { seoData } from '../data/seoData';
 
 const BASE_URL = 'https://www.ecoridedroptaxi.com';
 
-function generateSiteMap(routes) {
+function generateSiteMap() {
+  const dynamicUrls = [];
+
+  // Add Route URLs
+  seoData.routes.forEach(route => {
+    dynamicUrls.push(`${BASE_URL}/${route.fromSlug}-to-${route.toSlug}-one-way-taxi`);
+  });
+
+  // Add City URLs
+  seoData.cities.forEach(city => {
+    dynamicUrls.push(`${BASE_URL}/${city.slug}-one-way-taxi`);
+  });
+
+  // Add State URLs
+  seoData.states.forEach(state => {
+    dynamicUrls.push(`${BASE_URL}/${state.slug}-one-way-taxi`);
+  });
+
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!-- Manual static URLs -->
@@ -27,11 +44,11 @@ function generateSiteMap(routes) {
        <priority>0.9</priority>
      </url>
      
-     <!-- Dynamic SEO route URLs -->
-     ${Object.keys(routes).map((slug) => {
+     <!-- Dynamic SEO URLs -->
+     ${dynamicUrls.map((url) => {
        return `
        <url>
-           <loc>${BASE_URL}/routes/${slug}</loc>
+           <loc>${url}</loc>
            <changefreq>weekly</changefreq>
            <priority>0.8</priority>
        </url>
@@ -42,11 +59,9 @@ function generateSiteMap(routes) {
 }
 
 export function getServerSideProps({ res }) {
-  // Generate the XML sitemap with the dynamic route data
-  const sitemap = generateSiteMap(seoRoutes);
+  const sitemap = generateSiteMap();
 
   res.setHeader('Content-Type', 'text/xml');
-  // Send the XML to the browser
   res.write(sitemap);
   res.end();
 
@@ -55,6 +70,4 @@ export function getServerSideProps({ res }) {
   };
 }
 
-export default function SiteMap() {
-  // getServerSideProps will do the heavy lifting
-}
+export default function SiteMap() {}

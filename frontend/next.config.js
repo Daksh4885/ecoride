@@ -13,6 +13,15 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/routes/:slug',
+        destination: '/:slug-one-way-taxi',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

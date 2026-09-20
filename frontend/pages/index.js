@@ -16,12 +16,16 @@ export default function Home() {
     <>
       <Head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFNMJ5L6N0"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-LFNMJ5L6N0');
-        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-LFNMJ5L6N0');
+            `,
+          }}
+        />
         {/* ── Primary SEO ── */}
         <title>One Way Drop Taxi in Tamil Nadu | EcoRide</title>
         <meta name="description" content="EcoRide DropTaxi — #1 one-way drop taxi service in South India. Pay only one-way fare from ₹15/km. No return charge. Chennai, Coimbatore, Madurai, Trichy, Salem, Vellore, Tirunelveli drop taxi. Book online or call +91 7019700584. 24/7 outstation cab service." />
